@@ -1,5 +1,7 @@
 import express, { response } from "express"
 import pg from 'pg'
+import cors from 'cors'
+
 
 const { Pool } = pg
 
@@ -15,11 +17,14 @@ const sql = new Pool({
 
 })
 
+server.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
+}))
 
 
 server.get('/users', async (req, res) => {
     try {
-
         const response = await sql.query('SELECT * FROM users')
         return res.json({ results: response.rows, ok: true })
 
