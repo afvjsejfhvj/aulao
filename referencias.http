@@ -8,9 +8,9 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "name": "Pica pau",
-    "email": "PicaPau@gmail.com",
-    "password" : "123",
+    "name": "Pernalonga",
+    "email": "Pernalonga@gmail.com",
+    "password" : "321",
     "profile" : "ADM"
 }
 
@@ -20,6 +20,23 @@ POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-    "email": "PicaPau@gmail.com",
-    "password" : "123"
+    "email": "Pernalonga@gmail.com",
+    "password" : "321"
+}
+
+###
+
+GET http://localhost:3000/issues
+
+### 
+
+POST http://localhost:3000/issues
+Content-Type: application/json
+
+{
+    "title": "bug",
+    "description": "nao faz login",
+    "status" : true,
+    "responsible" : "marcos",
+    "observations" : ""
 }
