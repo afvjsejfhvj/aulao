@@ -1,42 +1,29 @@
 ### 
 
-GET http://localhost:3000/users
+GET http://localhost:3000/usuario
 
 ###
 
-POST http://localhost:3000/users
+POST http://localhost:3000/usuario
 Content-Type: application/json
 
 {
     "name": "Pernalonga",
-    "email": "Pernalonga@gmail.com",
-    "password" : "321",
-    "profile" : "ADM"
+    "email": "P32ernalonga@gmail.com"
 }
 
 ###
 
-POST http://localhost:3000/login
-Content-Type: application/json
-
-{
-    "email": "Pernalonga@gmail.com",
-    "password" : "321"
-}
-
-###
-
-GET http://localhost:3000/issues
-
+GET http://localhost:3000/tarefas
 ### 
 
-POST http://localhost:3000/issues
+POST http://localhost:3000/tarefas
 Content-Type: application/json
 
 {
-    "title": "bug",
-    "description": "nao faz login",
-    "status" : true,
-    "responsible" : "marcos",
-    "observations" : ""
+    "id_usuario": 1,
+    "setor": "setor 1",
+    "data_tarefa": "10-10-2000",
+    "status": "em andamento",
+    "prioridade" : "alta"
 }

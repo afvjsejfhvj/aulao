@@ -1,16 +1,15 @@
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY, 
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(50) NOT NULL,
-    profile VARCHAR(50) DEFAULT 'customer'
-) 
+create table usuario (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(200) NOT NULL,
+	email VARCHAR(300) unique NOT NULL 
+)
 
-CREATE TABLE issues (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(100) NOT NULL,
-    description TEXT NOT NULL,
-    status BOOLEAN DEFAULT false,
-    responsible VARCHAR(150) NOT NULL,
-    observations TEXT
+create table tarefas (
+	id_tarefa SERIAL PRIMARY KEY,
+	id_usuario int,
+	FOREIGN KEY (id_usuario) REFERENCES usuario(id),
+	setor VARCHAR(100) NOT NULL,
+	data_tarefa DATE ,
+	status VARCHAR(50) DEFAULT 'fazer',
+	prioridade VARCHAR(50) NOT NULL
 )
